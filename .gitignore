@@ -1,5 +1,26 @@
-# Ignore security scan reports
+# Ignore OWASP Dependency-Check report
 **/dependency-check-report.xml
+
+# Ignore Trivy file scan results
 **/trivyfs.txt
+
+# Ignore Trivy image scan results
 **/trivyimage.txt
+
+# Ignore SonarQube scanner working directory
 **/.scannerwork/
+
+# Ignore Node.js modules
+**/node_modules/
+
+# Ignore environment-specific files
+**/.env
+**/.env.local
+
+# Ignore IDE-specific files
+**/.idea/
+**/.vscode/
+
+# Ignore build artifacts
+**/dist/
+**/build/
