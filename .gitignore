@@ -1,0 +1,5 @@
+# Ignore security scan reports
+**/dependency-check-report.xml
+**/trivyfs.txt
+**/trivyimage.txt
+**/.scannerwork/
