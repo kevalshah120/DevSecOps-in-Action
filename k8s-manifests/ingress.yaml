@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: praduman.ip-ddns.com
+    - host: praduman.duckdns.org
       http:
         paths:
           - path: /api
