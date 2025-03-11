@@ -604,7 +604,7 @@ Check if the Jump Server can access the EKS cluster by listing the worker nodes:
 kubectl get nodes
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741437762798/e61dd85d-5ec6-491c-bf1f-3007eb1f8093.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741437762798/e61dd85d-5ec6-491c-bf1f-3007eb1f8093.png   )
 
 If you see the nodes, **your Jump Server setup is successful!** 🎉
 
@@ -631,7 +631,7 @@ eksctl create iamserviceaccount \
   --region=ap-south-1
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741437810310/e6353e33-cc05-43a5-bf33-29b63e1b8336.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741437810310/e6353e33-cc05-43a5-bf33-29b63e1b8336.png   )
 
 📌 **Explanation:**
 
@@ -658,7 +658,7 @@ Add the official AWS **EKS Helm repository**:
 helm repo add eks https://aws.github.io/eks-charts
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741437839956/94e69cd0-5a42-4d35-8c50-07879f0ccd8f.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741437839956/94e69cd0-5a42-4d35-8c50-07879f0ccd8f.png   )
 
 This repository contains pre-packaged Helm charts for essential AWS EKS components such as:  
 ✅ **AWS Load Balancer Controller**  
@@ -703,7 +703,7 @@ Check if the **Load Balancer Controller** is running correctly:
 kubectl get pods -n kube-system | grep aws-load-balancer-controller
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741438471377/b51b2dd3-a22c-471c-a331-e42bfa9a5025.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741438471377/b51b2dd3-a22c-471c-a331-e42bfa9a5025.png   )
 
 ### 4\. Fixing Pods in Error or CrashLoopBackOff
 
@@ -739,7 +739,7 @@ helm upgrade -i aws-load-balancer-controller eks/aws-load-balancer-controller \
 kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-load-balancer-controller
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741438829300/9c190c92-9313-490c-865b-76980b11b797.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741438829300/9c190c92-9313-490c-865b-76980b11b797.png   )
 
 🚀 **Your AWS Load Balancer Controller is now ready to manage Kubernetes services!** 🎉
 
@@ -757,7 +757,7 @@ To keep ArgoCD components organized, create a dedicated **namespace**:
 kubectl create namespace argocd
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439351489/a185aa2d-b571-4d90-a295-814f033521aa.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439351489/a185aa2d-b571-4d90-a295-814f033521aa.png   )
 
 ### 2\. Install ArgoCD Using Manifests
 
@@ -767,7 +767,7 @@ Apply the official **ArgoCD installation YAML** to deploy its components:
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439449977/9b3f488b-cfe9-48e5-b1c0-92b1f320c716.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439449977/9b3f488b-cfe9-48e5-b1c0-92b1f320c716.png   )
 
 This will install all necessary ArgoCD components inside the `argocd` namespace.
 
@@ -779,7 +779,7 @@ Check if all ArgoCD **pods** are running:
 kubectl get pods -n argocd
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439486327/2f4c8c30-7c14-4d64-be54-078824843f5b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439486327/2f4c8c30-7c14-4d64-be54-078824843f5b.png   )
 
 ### **4\. Expose ArgoCD Server**
 
@@ -799,11 +799,11 @@ Run the following command to get the external URL:
 kubectl get svc -n argocd argocd-server
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439573002/3ace2789-147d-4e85-8802-4ecb013c8104.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439573002/3ace2789-147d-4e85-8802-4ecb013c8104.png   )
 
 Look for the **EXTERNAL-IP** in the output. This is the URL you’ll use to access the ArgoCD UI.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439768269/e971887f-7d2a-41c4-8db7-bec16fb15f2c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439768269/e971887f-7d2a-41c4-8db7-bec16fb15f2c.png   )
 
 ### 6\. Get the ArgoCD Admin Password
 
@@ -826,7 +826,7 @@ Login using:
 * **Password:** *(retrieved from the secret above)*
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439804593/2056b752-4073-4cee-9ede-564f76f193e8.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439804593/2056b752-4073-4cee-9ede-564f76f193e8.png   )
 
 > **ArgoCD is now ready!** You can start managing your Kubernetes deployments using GitOps. 🚀
 
@@ -844,7 +844,7 @@ Since SonarQube is running as a **Docker container** on the Jenkins server, chec
 docker ps
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439908245/ccf2d8c4-e366-4e4d-8d31-c338c0278c9e.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439908245/ccf2d8c4-e366-4e4d-8d31-c338c0278c9e.png   )
 
 You should see a running SonarQube container **exposed on port 9000**.
 
@@ -856,7 +856,7 @@ Open any web browser and visit:
 http://<public-ip-of-jenkins-server>:9000
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439966061/2da33e4c-a391-460e-8341-c802c580ceb9.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741439966061/2da33e4c-a391-460e-8341-c802c580ceb9.png   )
 
 Log in using the default credentials:
 
@@ -867,7 +867,7 @@ Log in using the default credentials:
 
 Once logged in, **set a new password** for security.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440050172/dfbf8897-cc8d-4972-8f8d-3ee275516d7b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440050172/dfbf8897-cc8d-4972-8f8d-3ee275516d7b.png   )
 
 ### 3\. Generate an Authentication Token
 
@@ -875,15 +875,15 @@ Jenkins needs a **token** to authenticate with SonarQube for automated scans.
 
 1. Go to **Administration** → **Security** → **Users**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440120078/c7d2deac-510e-4e4b-b72e-5ba3e1d2143a.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440120078/c7d2deac-510e-4e4b-b72e-5ba3e1d2143a.png   )
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440353109/8c32814d-561f-4123-8c3a-b66337004e57.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440353109/8c32814d-561f-4123-8c3a-b66337004e57.png   )
     
     Click on **Update Token**.
     
 3. Provide a **name** and set an **expiration date** (or leave it as "No Expiration").
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440489989/ee5fe744-8bfd-4624-976d-f29b45867663.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440489989/ee5fe744-8bfd-4624-976d-f29b45867663.png   )
     
 4. Click **Generate Token**.
     
@@ -896,17 +896,17 @@ A webhook will notify Jenkins once SonarQube completes an analysis.
 
 1. Navigate to **Administration** → **Configuration** → **Webhooks**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440664143/69b7eb5b-ee81-4683-8c7e-7373df3fc454.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440664143/69b7eb5b-ee81-4683-8c7e-7373df3fc454.png   )
     
     Click **Create Webhook**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440702895/a9a62e5f-e128-4d39-a3b2-e2240abaef79.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440702895/a9a62e5f-e128-4d39-a3b2-e2240abaef79.png   )
     
 3. Enter the details:
     
     * **Name:** `Jenkins Webhook`
         
-    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440860439/75c3c487-a15c-4203-b8c9-bb783e37ade6.png align="center")
+    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440860439/75c3c487-a15c-4203-b8c9-bb783e37ade6.png   )
         
         **URL:** `http://<public-ip-of-jenkins-server>:8080/sonarqube-webhook`
         
@@ -914,7 +914,7 @@ A webhook will notify Jenkins once SonarQube completes an analysis.
         
 4. Click **Create**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741487965585/b3bc2554-674a-4921-a496-4c20e9f263a4.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741487965585/b3bc2554-674a-4921-a496-4c20e9f263a4.png   )
     
 
 > Now, the webhook will trigger Jenkins when a project analysis is complete.
@@ -927,11 +927,11 @@ SonarQube will analyze the **frontend and backend** code separately.
 
 1. Go to **Projects** → **Manually → Create a New Project**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441258669/81ccfc7c-1d6e-4e94-a5ef-3ec53f318b4b.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441258669/81ccfc7c-1d6e-4e94-a5ef-3ec53f318b4b.png   )
     
     Fill in the required details (Project Name, Key, etc.).
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441418605/aa78604f-da77-47e3-a230-22e2c66b0bd5.png align="center")
+3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441418605/aa78604f-da77-47e3-a230-22e2c66b0bd5.png   )
     
     Click **Setup**.
     
@@ -939,19 +939,19 @@ SonarQube will analyze the **frontend and backend** code separately.
     
 5. Select **Use an Existing Token** and **paste the token** generated earlier.
     
-6. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441582221/166bedc7-2765-438c-a1a8-7073cc4f9d3a.png align="center")
+6. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441582221/166bedc7-2765-438c-a1a8-7073cc4f9d3a.png   )
     
     Choose **Other** if your build type is not listed.
     
-7. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441621232/65fb0958-141a-4aa4-82b9-2d039822166c.png align="center")
+7. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441621232/65fb0958-141a-4aa4-82b9-2d039822166c.png   )
     
     Select **OS: Linux**.
     
-8. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441672905/b5162b3a-e481-4d86-be98-141387ef29c0.png align="center")
+8. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441672905/b5162b3a-e481-4d86-be98-141387ef29c0.png   )
     
     SonarQube will generate a command for analysis—**copy and save it**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441699085/e31e9567-a89e-45b3-8370-4f13957ae9a8.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441699085/e31e9567-a89e-45b3-8370-4f13957ae9a8.png   )
     
 9. Add the command to your **Jenkins pipeline**
     
@@ -962,17 +962,17 @@ Repeat the **same steps** for the backend project:
 
 1. Go to **Projects** → **Create a New Project**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441258669/81ccfc7c-1d6e-4e94-a5ef-3ec53f318b4b.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441258669/81ccfc7c-1d6e-4e94-a5ef-3ec53f318b4b.png   )
     
 2. Fill in the required details.
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441891639/8c0388dc-3ca1-4151-bc34-af7098e0e53f.png align="center")
+3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441891639/8c0388dc-3ca1-4151-bc34-af7098e0e53f.png   )
     
     Click **Setup** → **Analyze Locally**.
     
 4. Use the **previously generated token**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441967533/88db0b7d-43a7-4c29-a4a2-2f8f1df8b9b2.png align="center")
+5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441967533/88db0b7d-43a7-4c29-a4a2-2f8f1df8b9b2.png   )
     
     Choose **Other** as the build type if needed.
     
@@ -980,7 +980,7 @@ Repeat the **same steps** for the backend project:
     
 7. **Copy the generated analysis command** and save it.
     
-8. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442008154/019dc47a-6987-4f33-981c-d61b8cef3887.png align="center")
+8. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442008154/019dc47a-6987-4f33-981c-d61b8cef3887.png   )
     
     Add the command to your **Jenkins pipeline**
     
@@ -1005,7 +1005,7 @@ Amazon **Elastic Container Registry (ECR)** will store the **frontend and backen
 
 1. **Open AWS Console** and navigate to the **ECR service**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442220525/01fc1f1c-87ba-481f-bc52-37717f214dec.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442220525/01fc1f1c-87ba-481f-bc52-37717f214dec.png   )
     
     Click **Create Repository**.
     
@@ -1013,14 +1013,14 @@ Amazon **Elastic Container Registry (ECR)** will store the **frontend and backen
     
 4. **Repository Name:** `frontend`.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443658443/3719eea2-68ba-4d84-a437-39e024f0875b.png align="center")
+5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443658443/3719eea2-68ba-4d84-a437-39e024f0875b.png   )
     
     Repeat the same steps to create a `backend` repository.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443722005/889f0766-ee66-4c40-8247-240a2fc1414e.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443722005/889f0766-ee66-4c40-8247-240a2fc1414e.png   )
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443777588/da0bef4d-f75a-4e3f-8503-77c4e04d0345.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443777588/da0bef4d-f75a-4e3f-8503-77c4e04d0345.png   )
 
 ### 2\. Store Credentials in Jenkins
 
@@ -1030,13 +1030,13 @@ To integrate Jenkins with SonarQube, AWS ECR, and GitHub, we need to store vario
 
 1. Go to **Jenkins Dashboard** → **Manage Jenkins** → **Credentials**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442565891/30a3a863-56b1-4ba7-bae6-802cfc51b33c.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442565891/30a3a863-56b1-4ba7-bae6-802cfc51b33c.png   )
     
     Select the appropriate **Global credentials domain**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442659623/d4bb19fc-b819-4bb5-8ab4-f9ef07dc8dfb.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442659623/d4bb19fc-b819-4bb5-8ab4-f9ef07dc8dfb.png   )
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442716197/ce323ecc-98db-4565-8960-f3206d918614.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442716197/ce323ecc-98db-4565-8960-f3206d918614.png   )
     
 3. Click **Add Credentials** and fill in the details:
     
@@ -1051,7 +1051,7 @@ To integrate Jenkins with SonarQube, AWS ECR, and GitHub, we need to store vario
     * Click **Create**.
         
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442811289/49f8c587-6987-41e4-a94b-7aaa306dbfb5.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442811289/49f8c587-6987-41e4-a94b-7aaa306dbfb5.png   )
     
 
 #### **b) Store AWS Account ID in Jenkins**
@@ -1066,11 +1066,11 @@ To integrate Jenkins with SonarQube, AWS ECR, and GitHub, we need to store vario
         
     * **Secret:** `<AWS-Account-ID>`
         
-    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442935298/8ccf9024-a7d8-4c90-be74-f0ffc99c050b.png align="center")
+    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442935298/8ccf9024-a7d8-4c90-be74-f0ffc99c050b.png   )
         
         **ID:** `Account_ID`
         
-        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442974476/8dd3ecb2-c9df-496d-b91d-ad1722a9300f.png align="center")
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442974476/8dd3ecb2-c9df-496d-b91d-ad1722a9300f.png   )
         
     * Click **Create**.
         
@@ -1104,7 +1104,7 @@ For **Backend Repository**:
         
     * **ID:** `ECR_REPO2`
         
-        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443151975/365596a2-0c1c-479e-ac8d-3133e227739e.png align="center")
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443151975/365596a2-0c1c-479e-ac8d-3133e227739e.png   )
         
     * Click **Create**.
         
@@ -1139,7 +1139,7 @@ For **Backend Repository**:
 
 > here all required credentials are get added
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741444543186/f9e07190-22d1-4b76-a67e-9a96183e840b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741444543186/f9e07190-22d1-4b76-a67e-9a96183e840b.png   )
 
 ### **Final Confirmation**
 
@@ -1167,9 +1167,9 @@ Navigate to **Jenkins Dashboard** → **Manage Jenkins** → **Plugins** → **A
 ✅ **OWASP Dependency-Check** – Detects security vulnerabilities in dependencies.  
 ✅ **SonarQube Scanner** – Enables code quality analysis with SonarQube.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741444870296/d0b8da8d-096d-44cd-a8ee-84b080bbb2ab.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741444870296/d0b8da8d-096d-44cd-a8ee-84b080bbb2ab.png   )
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741444907427/8a66ee60-47ba-4106-9c3c-e2fb62d3966f.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741444907427/8a66ee60-47ba-4106-9c3c-e2fb62d3966f.png   )
 
 Once installed, **restart Jenkins** to apply changes.
 
@@ -1185,7 +1185,7 @@ Once installed, **restart Jenkins** to apply changes.
     
 4. Check the box **Install Automatically**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445221523/b0af3629-63dc-4aa2-a342-b66df19acb0a.png align="center")
+5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445221523/b0af3629-63dc-4aa2-a342-b66df19acb0a.png   )
     
     Click **Save**.
     
@@ -1200,7 +1200,7 @@ Once installed, **restart Jenkins** to apply changes.
     
 4. Check **Install Automatically**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445339243/557241fb-587f-4235-b5c2-063b83875f16.png align="center")
+5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445339243/557241fb-587f-4235-b5c2-063b83875f16.png   )
     
     Click **Save**.
     
@@ -1213,7 +1213,7 @@ Once installed, **restart Jenkins** to apply changes.
     
 3. Check **Install Automatically from GitHub**.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445517523/5686bd62-1514-4a3f-bbe7-469a0e69f84d.png align="center")
+4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445517523/5686bd62-1514-4a3f-bbe7-469a0e69f84d.png   )
     
     Click **Save**.
     
@@ -1228,7 +1228,7 @@ Once installed, **restart Jenkins** to apply changes.
     
 4. Check **Install Automatically from** **Docker.com**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445599671/c0845040-5c52-499e-9664-fb1e8d6bb39a.png align="center")
+5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445599671/c0845040-5c52-499e-9664-fb1e8d6bb39a.png   )
     
     Click **Save & Apply**.
     
@@ -1251,7 +1251,7 @@ To enable **SonarQube notifications in Jenkins**, configure the webhook.
         
     * **Server Authentication Token:** `<sonar-qube-token-credential-name>`
         
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445857812/239f98f1-91ed-4f26-86e8-92e751f460e4.png align="center")
+4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445857812/239f98f1-91ed-4f26-86e8-92e751f460e4.png   )
     
     Click **Apply & Save**.
     
@@ -1272,7 +1272,7 @@ This pipeline automates the **frontend build, security analysis, Docker image cr
     
 3. Select **Pipeline** as the item type.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741456092289/fcb015a5-9fb4-401c-801d-0ab19218063b.png align="center")
+4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741456092289/fcb015a5-9fb4-401c-801d-0ab19218063b.png   )
     
     Click **OK** to proceed.
     
@@ -1394,7 +1394,7 @@ pipeline {
 }
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741457839893/15fd831a-2071-4a69-894f-b36de7ce4c24.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741457839893/15fd831a-2071-4a69-894f-b36de7ce4c24.png   )
 
 ### 3\. Build the Pipeline
 
@@ -1402,9 +1402,9 @@ pipeline {
     
 2. Click **Build Now** to start the pipeline.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741458808440/e91d9923-d0da-4dfb-a11a-6dcc8430992c.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741458808440/e91d9923-d0da-4dfb-a11a-6dcc8430992c.png   )
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741514552441/eae55dca-acc9-4bc8-b15c-44b3e89ea063.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741514552441/eae55dca-acc9-4bc8-b15c-44b3e89ea063.png   )
     
 
 ### 4\. Verify SonarQube Analysis
@@ -1415,7 +1415,7 @@ pipeline {
     http://<public-ip-of-jenkins-server>:9000
     ```
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741514588913/1d911ec7-71a7-4880-b4b4-c4c0ec6bff94.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741514588913/1d911ec7-71a7-4880-b4b4-c4c0ec6bff94.png   )
     
 2. Check if the **SonarQube scan results** appear in the UI under the **frontend project**.
     
@@ -1444,7 +1444,7 @@ This pipeline automates the **backend build, security scanning, Docker image cre
     
 3. Select **Pipeline** as the item type.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741518531141/eb049dd3-8936-4810-8f66-028378f8f12c.png align="center")
+4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741518531141/eb049dd3-8936-4810-8f66-028378f8f12c.png   )
     
     Click **OK** to proceed.
     
@@ -1566,7 +1566,7 @@ pipeline {
 }
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741519197297/4015381c-9824-4414-985e-a85be33e690c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741519197297/4015381c-9824-4414-985e-a85be33e690c.png   )
 
 ### 3\. Build the Pipeline
 
@@ -1574,7 +1574,7 @@ pipeline {
     
 2. Click **Build Now** to trigger the pipeline.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741523884768/3cc037bb-99a5-4435-b006-c6e9e343f254.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741523884768/3cc037bb-99a5-4435-b006-c6e9e343f254.png   )
     
 
 ### 4\. Verify SonarQube Analysis
@@ -1585,7 +1585,7 @@ pipeline {
     http://<public-ip-of-jenkins-server>:9000
     ```
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741519441252/9599b465-e09d-45ad-a104-a407ea1cb14c.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741519441252/9599b465-e09d-45ad-a104-a407ea1cb14c.png   )
     
     Check the **SonarQube scan results** under the **backend project**.
     
@@ -1614,20 +1614,20 @@ In this step, we will **deploy the application (frontend, backend, database, and
     kubectl get svc -n argocd argocd-server
     ```
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741520697491/d405f4f6-cb99-448f-94e5-8f6779bd3fc1.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741520697491/d405f4f6-cb99-448f-94e5-8f6779bd3fc1.png   )
     
 2. Access the ArgoCD UI using **EXTERNAL-IP** in the output.
     
 3. Login using `username` and `password` created by you previously.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524032969/bf38e285-4f43-41c4-811c-f583c35a4b0b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524032969/bf38e285-4f43-41c4-811c-f583c35a4b0b.png   )
 
 ### 2\. Connect GitHub Repository to ArgoCD
 
 1. Go to **Settings** → **Repositories**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524080333/523cc402-8152-4c35-a966-7e7a478060e9.png align="center")
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524080333/523cc402-8152-4c35-a966-7e7a478060e9.png   )
     
     Click **"Connect Repository using HTTPS"**.
     
@@ -1639,7 +1639,7 @@ In this step, we will **deploy the application (frontend, backend, database, and
         
     * **Authentication:** None (if public repo)
         
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524351951/0745cb43-eb83-460d-8e02-bc5bfea1a9a9.png align="center")
+4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524351951/0745cb43-eb83-460d-8e02-bc5bfea1a9a9.png   )
     
     Click **"Connect"**.
     
@@ -1658,7 +1658,7 @@ In this step, we will **deploy the application (frontend, backend, database, and
     kubectl get namespaces
     ```
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524473226/95f4a026-bc5b-45b1-88dc-e7dbd5bec1e5.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524473226/95f4a026-bc5b-45b1-88dc-e7dbd5bec1e5.png   )
     
 
 ### 4\. Deploy Database in ArgoCD
@@ -1681,16 +1681,16 @@ In this step, we will **deploy the application (frontend, backend, database, and
         
     * **Namespace:** `three-tier`
         
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525023900/7b80d291-5161-419d-8e73-dfec2028f5af.png align="center")
+3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525023900/7b80d291-5161-419d-8e73-dfec2028f5af.png   )
     
     Click **Create**.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525162975/5aa54702-f575-4ba2-9323-7e9fa53ab19b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525162975/5aa54702-f575-4ba2-9323-7e9fa53ab19b.png   )
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525188668/f927c4f4-1cdc-42a4-ba2b-f25c99a0cc35.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525188668/f927c4f4-1cdc-42a4-ba2b-f25c99a0cc35.png   )
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525425034/c790456f-eb2f-4990-aa21-b6fa0c7db513.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525425034/c790456f-eb2f-4990-aa21-b6fa0c7db513.png   )
 
 ### 5\. Deploy Backend in ArgoCD
 
@@ -1712,12 +1712,12 @@ In this step, we will **deploy the application (frontend, backend, database, and
         
     * **Namespace:** `three-tier`
         
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525596484/fab7203e-ff2b-47fd-876c-708fa6efddb2.png align="center")
+3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525596484/fab7203e-ff2b-47fd-876c-708fa6efddb2.png   )
     
     Click **Create**.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525631628/3daaeb8d-27ec-4be0-bf13-841029f078c4.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525631628/3daaeb8d-27ec-4be0-bf13-841029f078c4.png   )
 
 ### 6\. Deploy Frontend in ArgoCD
 
@@ -1742,7 +1742,7 @@ In this step, we will **deploy the application (frontend, backend, database, and
 3. Click **Create**.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607070003/87b23be1-15eb-4b78-a1a1-cd4105982a2c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607070003/87b23be1-15eb-4b78-a1a1-cd4105982a2c.png   )
 
 ### 7\. Deploy Ingress in ArgoCD
 
@@ -1767,9 +1767,9 @@ In this step, we will **deploy the application (frontend, backend, database, and
 3. Click **Create**.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607042824/e0df1c07-151f-4fa6-992e-1d4227732cb1.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607042824/e0df1c07-151f-4fa6-992e-1d4227732cb1.png   )
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607128084/8a7fb643-b1d7-4999-9e49-d0539ce1fb27.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607128084/8a7fb643-b1d7-4999-9e49-d0539ce1fb27.png   )
 
 ### 8\. Verify Deployment in ArgoCD
 
@@ -1782,7 +1782,7 @@ In this step, we will **deploy the application (frontend, backend, database, and
 
 > 🎉 **Congratulations! Your application is now fully deployed using ArgoCD!** 🚀 and can be accessed at [`http://3-111-158-0.nip.io/`](http://3-111-158-0.nip.io/)
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607218351/449d87b3-f39f-481b-a957-e79966c78210.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741607218351/449d87b3-f39f-481b-a957-e79966c78210.png   )
 
 ---
 
@@ -1801,7 +1801,7 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741610771165/040d9108-e8da-488f-915b-e33384af1489.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741610771165/040d9108-e8da-488f-915b-e33384af1489.png   )
 
 ### 2\. Install Prometheus and Grafana using Helm
 
@@ -1834,16 +1834,16 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     kubectl get svc prometheus-kube-prometheus-prometheus
     ```
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741627422238/9e1a26e9-3e30-40d9-b6c6-3cd72e148a32.png align="center")
+* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741627422238/9e1a26e9-3e30-40d9-b6c6-3cd72e148a32.png   )
     
     Open `<External-IP>:9999` in your browser.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741628374258/3c4d69c4-d8ec-46cc-8fed-7f3fc4cd0e9e.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741628374258/3c4d69c4-d8ec-46cc-8fed-7f3fc4cd0e9e.png   )
 
 * Click on **Status** and select **Target**. You'll see a list of Targets displayed. In Grafana, we'll use this as a data source.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630034240/7a33de79-caf9-4cef-8ad7-582efb0d30ba.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630034240/7a33de79-caf9-4cef-8ad7-582efb0d30ba.png   )
     
 
 ### 4\. Access Grafana UI
@@ -1855,7 +1855,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     #look for the prometheus-grafana svc
     ```
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741628868815/1a4c02b0-036d-4b32-8036-c62d55e03ca6.png align="center")
+* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741628868815/1a4c02b0-036d-4b32-8036-c62d55e03ca6.png   )
     
 * By default, it uses `ClusterIP`. Change it to `LoadBalancer`:
     
@@ -1866,7 +1866,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     * Find the line `type: ClusterIP` and change it to `type: LoadBalancer`.
         
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629034772/e0f43fd3-15f2-4056-aaaf-b9f7c16cc5e2.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629034772/e0f43fd3-15f2-4056-aaaf-b9f7c16cc5e2.png   )
     
 * Get the **external IP** of Grafana:
     
@@ -1874,12 +1874,12 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     kubectl get svc prometheus-grafana
     ```
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629165298/fc3afc55-7cfe-4f7b-a359-8f88153cf603.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629165298/fc3afc55-7cfe-4f7b-a359-8f88153cf603.png   )
     
 * Open `<EXTERNAL-IP>` in your browser.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629578205/00861a5b-b4d5-4951-94f0-8acdc3db0739.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629578205/00861a5b-b4d5-4951-94f0-8acdc3db0739.png   )
 
 ### 5\. Get Grafana Admin Password
 
@@ -1887,14 +1887,14 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 kubectl get secret grafana -n default -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629668671/dc7e1e63-f33c-4a5b-9d19-dfb15311f8da.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629668671/dc7e1e63-f33c-4a5b-9d19-dfb15311f8da.png   )
 
 * **Username:** `admin`
     
 * **Password:** (output from the above command)
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629732834/b9b95613-41e7-4c98-8860-a2a354019aa6.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741629732834/b9b95613-41e7-4c98-8860-a2a354019aa6.png   )
 
 ### **6\. Configure Prometheus as a Data Source in Grafana**
 
@@ -1902,19 +1902,19 @@ kubectl get secret grafana -n default -o jsonpath="{.data.admin-password}" | bas
     
 2. Go to **Connections** → **Data Sources**.
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630661899/20d56a67-d85c-4208-bef6-69e9fa3cf162.png align="center")
+3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630661899/20d56a67-d85c-4208-bef6-69e9fa3cf162.png   )
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630724688/e305815a-4d60-4696-982e-b392dce4314d.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630724688/e305815a-4d60-4696-982e-b392dce4314d.png   )
     
     Click **Data source** → Select **Prometheus**
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630757616/4d990978-9a0d-4c0c-bbb0-198364c40ea5.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630757616/4d990978-9a0d-4c0c-bbb0-198364c40ea5.png   )
     
 4. Provide the **Prometheus URL** (&lt;prometheus-loadbalancer-dns&gt;:9090) if not get provided.
     
 5. Click **Save & Test**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630997721/a5105f26-a119-4d4a-bc96-69cb99e34e2f.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630997721/a5105f26-a119-4d4a-bc96-69cb99e34e2f.png   )
     
 
 > 🎉 **Congratulations! Your Kubernetes cluster is now being monitored using Prometheus & Grafana!**
@@ -1931,17 +1931,17 @@ This dashboard provides an overview of the Kubernetes cluster, including node he
 
 * Open the **Grafana UI** and navigate to **Dashboards**.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631187960/c29b5cde-c389-45da-b79c-56cb8dccfaa6.png align="right")
+* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631187960/c29b5cde-c389-45da-b79c-56cb8dccfaa6.png  "right")
     
     Click on **New** → **Import**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631232457/f4d81a20-7b49-4a3a-8ba7-1def38368e4b.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631232457/f4d81a20-7b49-4a3a-8ba7-1def38368e4b.png   )
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631372426/938341f1-9559-4014-8ea9-391776f58245.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631372426/938341f1-9559-4014-8ea9-391776f58245.png   )
     
 * In the **Import via** [**Grafana.com**](http://Grafana.com) field, enter **6417** (Prometheus Kubernetes Cluster Monitoring Dashboard).
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631528244/d4e7e50a-dce5-4c54-84e1-a29aa143b0d5.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631528244/d4e7e50a-dce5-4c54-84e1-a29aa143b0d5.png   )
     
 * Click **Load**.
     
@@ -1949,7 +1949,7 @@ This dashboard provides an overview of the Kubernetes cluster, including node he
     
 * Click **Import**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631806997/c4c07457-de58-4c21-acd1-ed86ec1085d8.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631806997/c4c07457-de58-4c21-acd1-ed86ec1085d8.png   )
     
 
 > You should now see a comprehensive dashboard displaying Kubernetes cluster metrics.
@@ -1970,13 +1970,13 @@ This dashboard provides insights into individual Kubernetes resources such as po
     
 5. Select **Prometheus** as the data source.
     
-6. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741632190806/881b8686-0d75-41f9-9253-635ba9f9a1fa.png align="center")
+6. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741632190806/881b8686-0d75-41f9-9253-635ba9f9a1fa.png   )
     
     select the data source i.e. `prometheus` and click on `import`
     
 7. Click **Import**.
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741632323000/e67a6044-8017-4be3-b0ee-f2249be47c6e.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741632323000/e67a6044-8017-4be3-b0ee-f2249be47c6e.png   )
     
 
 > Now, you have two powerful dashboards to monitor both the overall cluster health and specific Kubernetes resources in real-time.
