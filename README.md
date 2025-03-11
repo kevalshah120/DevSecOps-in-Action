@@ -40,13 +40,13 @@ By the end of this project, you’ll have a **fully functional, security-first D
 
 * **AMI (Amazon Machine Image):** Choose **Ubuntu Server**.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741292194265/b0f3b2c7-084b-4a03-a1a5-becb4af20c3b.png)
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741292194265/b0f3b2c7-084b-4a03-a1a5-becb4af20c3b.png)
     
-    **Instance Type:** Select **t2.2xlarge** (8 vCPUs, 32GB RAM) for better performance.
+* **Instance Type:** Select **t2.2xlarge** (8 vCPUs, 32GB RAM) for better performance.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741292259900/ee5e29eb-0610-4cb0-a91f-eb48eef384c9.png)
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741292259900/ee5e29eb-0610-4cb0-a91f-eb48eef384c9.png)
     
-    **Key Pair:** **No need to create a key pair** (proceed without key pair).
+* **Key Pair:** **No need to create a key pair** (proceed without key pair).
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741292295866/66776b0e-ac60-4f13-ba85-0632c9fd4f35.png)
     
@@ -76,9 +76,9 @@ Set up inbound rules to allow required network traffic:
 
 * **Storage:** Set at least **30 GiB**.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741293161695/8f46ae7e-c591-407b-b8c6-748be37d1837.png)
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741293161695/8f46ae7e-c591-407b-b8c6-748be37d1837.png)
     
-    **IAM Role:** Attach an **IAM profile with administrative access** to allow Jenkins to manage AWS resources.
+* **IAM Role:** Attach an **IAM profile with administrative access** to allow Jenkins to manage AWS resources.
     
     > Create an IAM profile with Administrator Access and attach it to EC2 instance
     
@@ -207,15 +207,15 @@ Since SSH is disabled for security reasons, use the **EC2 Instance Connect** fea
     
 * Select your Jenkins instance.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741293679169/40de1163-3fb8-4b77-a17d-2c4511faaba7.png)
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741293679169/40de1163-3fb8-4b77-a17d-2c4511faaba7.png)
     
-    Click the **"Connect"** button at the top.
+* Click the **"Connect"** button at the top.
     
 * Choose the **"EC2 Instance Connect"** tab.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741293744180/7b851c53-7f58-41fc-80c5-0e508a6d3496.png)
+ ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741293744180/7b851c53-7f58-41fc-80c5-0e508a6d3496.png)
     
-    Click **"Connect"** to open a web-based terminal directly in your browser.
+* Click **"Connect"** to open a web-based terminal directly in your browser.
     
 
 #### **8\. Monitor Running Processes**
@@ -254,9 +254,9 @@ This command provides a real-time view of system performance and running process
     
     * Install **Suggested Plugins**.
         
-    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741294679400/dc21cab8-5540-4831-a9e3-c329abda050a.png)
+      ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741294679400/dc21cab8-5540-4831-a9e3-c329abda050a.png)
         
-        Create an **Admin Username & Password**.
+    * Create an **Admin Username & Password**.
         
     * Complete the basic configuration.
         
@@ -291,9 +291,9 @@ To enable Jenkins to work with AWS and Terraform, install the following plugins 
 
 1. Go to **"Manage Jenkins"** &gt; **"Credentials"**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741295411239/6e5f0a6e-323b-430c-a8f5-cf1bdfd36d73.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741295411239/6e5f0a6e-323b-430c-a8f5-cf1bdfd36d73.png)
     
-    Click **"Global"** &gt; **"Add Credentials"**.
+2. Click **"Global"** &gt; **"Add Credentials"**.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741295457576/9180c439-d5c1-4cf1-960d-ed83d794bb71.png)
     
@@ -309,9 +309,9 @@ To enable Jenkins to work with AWS and Terraform, install the following plugins 
         
     * **Secret Access Key:** `From your AWS IAM user`
         
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741295930076/17d4c666-df84-406e-b68d-094ad5623a60.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741295930076/17d4c666-df84-406e-b68d-094ad5623a60.png)
     
-    Click **"Create"**.
+4. Click **"Create"**.
     
 
 > **Note:** Create an **IAM User** in AWS with **Administrator Access** and use its credentials here.
@@ -334,28 +334,26 @@ To enable Jenkins to work with AWS and Terraform, install the following plugins 
         whereis terraform
         ```
         
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296359742/94569b47-fd79-4dde-a4fa-a7059e81f220.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296359742/94569b47-fd79-4dde-a4fa-a7059e81f220.png)
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296416592/0e9a2f0c-6ef8-4b15-9f66-802082ab658e.png)
     
-    Click **Save**.
+4. Click **Save**.
     
 
 #### **5\. Create a New Jenkins Pipeline**
 
-> In this pipeline i will use this repository here all the terraform source code present to create production grade infrastructure
-
-%[https://github.com/praduman8435/Production-ready-EKS-with-automation] 
+> In this pipeline i will use this repository here all the terraform source code present to create production grade infrastructure: *[Production-ready-EKS-with-automation](praduman8435/Production-ready-EKS-with-automation)*
 
 1. In Jenkins, go to **Dashboard** &gt; **New Item**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296577029/43590b03-97a2-4ac5-8635-5b1af97e5b1f.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296577029/43590b03-97a2-4ac5-8635-5b1af97e5b1f.png)
     
-    Enter an **item name**.
+2. Enter an **item name**.
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296664743/a6d5d08b-c877-464b-99fb-f5a57ece067b.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741296664743/a6d5d08b-c877-464b-99fb-f5a57ece067b.png)
     
-    Select **Pipeline** and click **OK**.
+3. Select **Pipeline** and click **OK**.
     
 4. Scroll to the **Pipeline** section:
     
@@ -440,17 +438,17 @@ To enable Jenkins to work with AWS and Terraform, install the following plugins 
 
 1. Wait for a minute, then click **"Build with Parameters"**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741297477046/1323bbd7-1f49-42d0-8765-55d05921759f.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741297477046/1323bbd7-1f49-42d0-8765-55d05921759f.png)
     
-    Select a **Terraform action** (`plan`, `apply`, or `destroy`).
+2. Select a **Terraform action** (`plan`, `apply`, or `destroy`).
     
 3. Click **"Build"**.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741410767616/eb6fe041-5fde-47a1-9e2a-0f1b79940766.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741410767616/eb6fe041-5fde-47a1-9e2a-0f1b79940766.png)
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741411925695/520fa628-1ecf-4f6c-8b98-106d22daef72.png)
     
-    Navigate to the **Console Output** to track progress.
+4. Navigate to the **Console Output** to track progress.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741411958533/aed6e5a2-39cd-467a-ab0d-f916847afac1.png)
     
@@ -564,9 +562,9 @@ Once the instance is running, access it using **EC2 Instance Connect**:
     
 3. Click **"Connect"** &gt; **"EC2 Instance Connect"**.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741414558786/c70eb5cb-7b03-4381-a9d1-c058ff6e5f1b.png)
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741414558786/c70eb5cb-7b03-4381-a9d1-c058ff6e5f1b.png)
     
-    Click **"Connect"** to open a web terminal.
+4. Click **"Connect"** to open a web terminal.
     
 
 ### 3\. Configure AWS Credentials on the Jump Server
@@ -875,11 +873,11 @@ Jenkins needs a **token** to authenticate with SonarQube for automated scans.
 
 1. Go to **Administration** → **Security** → **Users**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440120078/c7d2deac-510e-4e4b-b72e-5ba3e1d2143a.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440120078/c7d2deac-510e-4e4b-b72e-5ba3e1d2143a.png   )
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440353109/8c32814d-561f-4123-8c3a-b66337004e57.png   )
     
-    Click on **Update Token**.
+2. Click on **Update Token**.
     
 3. Provide a **name** and set an **expiration date** (or leave it as "No Expiration").
     
@@ -896,9 +894,9 @@ A webhook will notify Jenkins once SonarQube completes an analysis.
 
 1. Navigate to **Administration** → **Configuration** → **Webhooks**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440664143/69b7eb5b-ee81-4683-8c7e-7373df3fc454.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440664143/69b7eb5b-ee81-4683-8c7e-7373df3fc454.png   )
     
-    Click **Create Webhook**.
+2. Click **Create Webhook**.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440702895/a9a62e5f-e128-4d39-a3b2-e2240abaef79.png   )
     
@@ -906,9 +904,9 @@ A webhook will notify Jenkins once SonarQube completes an analysis.
     
     * **Name:** `Jenkins Webhook`
         
-    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440860439/75c3c487-a15c-4203-b8c9-bb783e37ade6.png   )
+      ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741440860439/75c3c487-a15c-4203-b8c9-bb783e37ade6.png   )
         
-        **URL:** `http://<public-ip-of-jenkins-server>:8080/sonarqube-webhook`
+    * **URL:** `http://<public-ip-of-jenkins-server>:8080/sonarqube-webhook`
         
     * **Secret:** (Leave blank)
         
@@ -927,29 +925,29 @@ SonarQube will analyze the **frontend and backend** code separately.
 
 1. Go to **Projects** → **Manually → Create a New Project**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441258669/81ccfc7c-1d6e-4e94-a5ef-3ec53f318b4b.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441258669/81ccfc7c-1d6e-4e94-a5ef-3ec53f318b4b.png   )
     
-    Fill in the required details (Project Name, Key, etc.).
+2. Fill in the required details (Project Name, Key, etc.).
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441418605/aa78604f-da77-47e3-a230-22e2c66b0bd5.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441418605/aa78604f-da77-47e3-a230-22e2c66b0bd5.png   )
     
-    Click **Setup**.
+3. Click **Setup**.
     
 4. Choose **Analyze Locally**.
     
 5. Select **Use an Existing Token** and **paste the token** generated earlier.
     
-6. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441582221/166bedc7-2765-438c-a1a8-7073cc4f9d3a.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441582221/166bedc7-2765-438c-a1a8-7073cc4f9d3a.png   )
     
-    Choose **Other** if your build type is not listed.
+6. Choose **Other** if your build type is not listed.
     
-7. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441621232/65fb0958-141a-4aa4-82b9-2d039822166c.png   )
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441621232/65fb0958-141a-4aa4-82b9-2d039822166c.png   )
     
-    Select **OS: Linux**.
+7. Select **OS: Linux**.
     
-8. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441672905/b5162b3a-e481-4d86-be98-141387ef29c0.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441672905/b5162b3a-e481-4d86-be98-141387ef29c0.png   )
     
-    SonarQube will generate a command for analysis—**copy and save it**.
+8. SonarQube will generate a command for analysis—**copy and save it**.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441699085/e31e9567-a89e-45b3-8370-4f13957ae9a8.png   )
     
@@ -966,23 +964,23 @@ Repeat the **same steps** for the backend project:
     
 2. Fill in the required details.
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441891639/8c0388dc-3ca1-4151-bc34-af7098e0e53f.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441891639/8c0388dc-3ca1-4151-bc34-af7098e0e53f.png   )
     
-    Click **Setup** → **Analyze Locally**.
+3. Click **Setup** → **Analyze Locally**.
     
 4. Use the **previously generated token**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441967533/88db0b7d-43a7-4c29-a4a2-2f8f1df8b9b2.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741441967533/88db0b7d-43a7-4c29-a4a2-2f8f1df8b9b2.png   )
     
-    Choose **Other** as the build type if needed.
+5. Choose **Other** as the build type if needed.
     
 6. Select **OS: Linux**.
     
 7. **Copy the generated analysis command** and save it.
     
-8. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442008154/019dc47a-6987-4f33-981c-d61b8cef3887.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442008154/019dc47a-6987-4f33-981c-d61b8cef3887.png   )
     
-    Add the command to your **Jenkins pipeline**
+8. Add the command to your **Jenkins pipeline**
     
 
 ### 6\. Final Verification
@@ -1005,17 +1003,17 @@ Amazon **Elastic Container Registry (ECR)** will store the **frontend and backen
 
 1. **Open AWS Console** and navigate to the **ECR service**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442220525/01fc1f1c-87ba-481f-bc52-37717f214dec.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442220525/01fc1f1c-87ba-481f-bc52-37717f214dec.png   )
     
-    Click **Create Repository**.
+2. Click **Create Repository**.
     
 3. Choose **Private Repository**.
     
 4. **Repository Name:** `frontend`.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443658443/3719eea2-68ba-4d84-a437-39e024f0875b.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443658443/3719eea2-68ba-4d84-a437-39e024f0875b.png   )
     
-    Repeat the same steps to create a `backend` repository.
+5. Repeat the same steps to create a `backend` repository.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741443722005/889f0766-ee66-4c40-8247-240a2fc1414e.png   )
     
@@ -1030,9 +1028,9 @@ To integrate Jenkins with SonarQube, AWS ECR, and GitHub, we need to store vario
 
 1. Go to **Jenkins Dashboard** → **Manage Jenkins** → **Credentials**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442565891/30a3a863-56b1-4ba7-bae6-802cfc51b33c.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442565891/30a3a863-56b1-4ba7-bae6-802cfc51b33c.png   )
     
-    Select the appropriate **Global credentials domain**.
+2. Select the appropriate **Global credentials domain**.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442659623/d4bb19fc-b819-4bb5-8ab4-f9ef07dc8dfb.png   )
     
@@ -1066,9 +1064,9 @@ To integrate Jenkins with SonarQube, AWS ECR, and GitHub, we need to store vario
         
     * **Secret:** `<AWS-Account-ID>`
         
-    * ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442935298/8ccf9024-a7d8-4c90-be74-f0ffc99c050b.png   )
+      ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442935298/8ccf9024-a7d8-4c90-be74-f0ffc99c050b.png   )
         
-        **ID:** `Account_ID`
+    * **ID:** `Account_ID`
         
         ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741442974476/8dd3ecb2-c9df-496d-b91d-ad1722a9300f.png   )
         
@@ -1185,9 +1183,9 @@ Once installed, **restart Jenkins** to apply changes.
     
 4. Check the box **Install Automatically**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445221523/b0af3629-63dc-4aa2-a342-b66df19acb0a.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445221523/b0af3629-63dc-4aa2-a342-b66df19acb0a.png   )
     
-    Click **Save**.
+5. Click **Save**.
     
 
 #### **b) SonarQube Scanner Installation**
@@ -1200,9 +1198,9 @@ Once installed, **restart Jenkins** to apply changes.
     
 4. Check **Install Automatically**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445339243/557241fb-587f-4235-b5c2-063b83875f16.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445339243/557241fb-587f-4235-b5c2-063b83875f16.png   )
     
-    Click **Save**.
+5. Click **Save**.
     
 
 #### **c) OWASP Dependency Check Installation**
@@ -1213,9 +1211,9 @@ Once installed, **restart Jenkins** to apply changes.
     
 3. Check **Install Automatically from GitHub**.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445517523/5686bd62-1514-4a3f-bbe7-469a0e69f84d.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445517523/5686bd62-1514-4a3f-bbe7-469a0e69f84d.png   )
     
-    Click **Save**.
+4. Click **Save**.
     
 
 #### **d) Docker Installation**
@@ -1228,9 +1226,9 @@ Once installed, **restart Jenkins** to apply changes.
     
 4. Check **Install Automatically from** **Docker.com**.
     
-5. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445599671/c0845040-5c52-499e-9664-fb1e8d6bb39a.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445599671/c0845040-5c52-499e-9664-fb1e8d6bb39a.png   )
     
-    Click **Save & Apply**.
+5. Click **Save & Apply**.
     
 
 ### 3\. Configure SonarQube Webhook in Jenkins
@@ -1251,9 +1249,9 @@ To enable **SonarQube notifications in Jenkins**, configure the webhook.
         
     * **Server Authentication Token:** `<sonar-qube-token-credential-name>`
         
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445857812/239f98f1-91ed-4f26-86e8-92e751f460e4.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741445857812/239f98f1-91ed-4f26-86e8-92e751f460e4.png   )
     
-    Click **Apply & Save**.
+4. Click **Apply & Save**.
     
 
 > Jenkins is now **fully equipped** to handle **Docker builds, security analysis, and SonarQube scanning** in the DevSecOps pipeline. 🚀
@@ -1272,9 +1270,9 @@ This pipeline automates the **frontend build, security analysis, Docker image cr
     
 3. Select **Pipeline** as the item type.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741456092289/fcb015a5-9fb4-401c-801d-0ab19218063b.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741456092289/fcb015a5-9fb4-401c-801d-0ab19218063b.png   )
     
-    Click **OK** to proceed.
+4. Click **OK** to proceed.
     
 5. Scroll down to the **Pipeline** section and choose **Pipeline script**.
     
@@ -1444,9 +1442,9 @@ This pipeline automates the **backend build, security scanning, Docker image cre
     
 3. Select **Pipeline** as the item type.
     
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741518531141/eb049dd3-8936-4810-8f66-028378f8f12c.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741518531141/eb049dd3-8936-4810-8f66-028378f8f12c.png   )
     
-    Click **OK** to proceed.
+4. Click **OK** to proceed.
     
 5. Scroll to the **Pipeline** section and choose **Pipeline script**.
     
@@ -1585,9 +1583,9 @@ pipeline {
     http://<public-ip-of-jenkins-server>:9000
     ```
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741519441252/9599b465-e09d-45ad-a104-a407ea1cb14c.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741519441252/9599b465-e09d-45ad-a104-a407ea1cb14c.png   )
     
-    Check the **SonarQube scan results** under the **backend project**.
+2. Check the **SonarQube scan results** under the **backend project**.
     
 
 ### **Pipeline Workflow Summary**
@@ -1627,9 +1625,9 @@ In this step, we will **deploy the application (frontend, backend, database, and
 
 1. Go to **Settings** → **Repositories**.
     
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524080333/523cc402-8152-4c35-a966-7e7a478060e9.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524080333/523cc402-8152-4c35-a966-7e7a478060e9.png   )
     
-    Click **"Connect Repository using HTTPS"**.
+2. Click **"Connect Repository using HTTPS"**.
     
 3. Enter:
     
@@ -1639,9 +1637,9 @@ In this step, we will **deploy the application (frontend, backend, database, and
         
     * **Authentication:** None (if public repo)
         
-4. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524351951/0745cb43-eb83-460d-8e02-bc5bfea1a9a9.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741524351951/0745cb43-eb83-460d-8e02-bc5bfea1a9a9.png   )
     
-    Click **"Connect"**.
+4. Click **"Connect"**.
     
 
 ### 3\. Create Kubernetes Namespace for Deployment
@@ -1681,9 +1679,9 @@ In this step, we will **deploy the application (frontend, backend, database, and
         
     * **Namespace:** `three-tier`
         
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525023900/7b80d291-5161-419d-8e73-dfec2028f5af.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525023900/7b80d291-5161-419d-8e73-dfec2028f5af.png   )
     
-    Click **Create**.
+3. Click **Create**.
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525162975/5aa54702-f575-4ba2-9323-7e9fa53ab19b.png   )
@@ -1712,9 +1710,9 @@ In this step, we will **deploy the application (frontend, backend, database, and
         
     * **Namespace:** `three-tier`
         
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525596484/fab7203e-ff2b-47fd-876c-708fa6efddb2.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525596484/fab7203e-ff2b-47fd-876c-708fa6efddb2.png   )
     
-    Click **Create**.
+3. Click **Create**.
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741525631628/3daaeb8d-27ec-4be0-bf13-841029f078c4.png   )
@@ -1834,7 +1832,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     kubectl get svc prometheus-kube-prometheus-prometheus
     ```
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741627422238/9e1a26e9-3e30-40d9-b6c6-3cd72e148a32.png   )
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741627422238/9e1a26e9-3e30-40d9-b6c6-3cd72e148a32.png   )
     
     Open `<External-IP>:9999` in your browser.
     
@@ -1855,7 +1853,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     #look for the prometheus-grafana svc
     ```
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741628868815/1a4c02b0-036d-4b32-8036-c62d55e03ca6.png   )
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741628868815/1a4c02b0-036d-4b32-8036-c62d55e03ca6.png   )
     
 * By default, it uses `ClusterIP`. Change it to `LoadBalancer`:
     
@@ -1902,11 +1900,11 @@ kubectl get secret grafana -n default -o jsonpath="{.data.admin-password}" | bas
     
 2. Go to **Connections** → **Data Sources**.
     
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630661899/20d56a67-d85c-4208-bef6-69e9fa3cf162.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630661899/20d56a67-d85c-4208-bef6-69e9fa3cf162.png   )
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630724688/e305815a-4d60-4696-982e-b392dce4314d.png   )
     
-    Click **Data source** → Select **Prometheus**
+3. Click **Data source** → Select **Prometheus**
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741630757616/4d990978-9a0d-4c0c-bbb0-198364c40ea5.png   )
     
@@ -1931,9 +1929,9 @@ This dashboard provides an overview of the Kubernetes cluster, including node he
 
 * Open the **Grafana UI** and navigate to **Dashboards**.
     
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631187960/c29b5cde-c389-45da-b79c-56cb8dccfaa6.png  "right")
+  ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631187960/c29b5cde-c389-45da-b79c-56cb8dccfaa6.png  "right")
     
-    Click on **New** → **Import**.
+* Click on **New** → **Import**.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741631232457/f4d81a20-7b49-4a3a-8ba7-1def38368e4b.png   )
     
@@ -1970,9 +1968,9 @@ This dashboard provides insights into individual Kubernetes resources such as po
     
 5. Select **Prometheus** as the data source.
     
-6. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741632190806/881b8686-0d75-41f9-9253-635ba9f9a1fa.png   )
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741632190806/881b8686-0d75-41f9-9253-635ba9f9a1fa.png   )
     
-    select the data source i.e. `prometheus` and click on `import`
+6.  select the data source i.e. `prometheus` and click on `import`
     
 7. Click **Import**.
     
