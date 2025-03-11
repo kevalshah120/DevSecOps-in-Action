@@ -1,5 +1,5 @@
 # 🚀 Ultimate DevSecOps Project
-
+![DevSecOps-in-action](devsecops-in-action.jpg)
 This project showcases a fully automated **DevSecOps pipeline** integrating **Jenkins, Terraform, SonarQube, Trivy, OWASP Dependency-Check, ArgoCD, Prometheus, and Grafana** to deploy a **secure and scalable three-tier application on AWS EKS**.
 
 ## 🔹 Features:
