@@ -1,3 +1,5 @@
+# **Ultimate DevSecOps Project: End-to-End Kubernetes Three-Tier Deployment on AWS EKS with ArgoCD, Prometheus, Grafana & Jenkins**
+
 ## **Introduction: Why DevSecOps?**
 
 In today’s fast-paced tech world, speed and security go hand in hand. You can’t just build and deploy apps quickly—you need to **keep them secure** from day one. That’s where **DevSecOps** comes in! It blends **development, security, and operations** into one seamless process, ensuring that security is baked into every stage of the pipeline instead of being an afterthought.
