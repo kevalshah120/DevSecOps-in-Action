@@ -1,7 +1,8 @@
 # 🚀 Advanced End-to-End DevSecOps Kubernetes Project  
 
 ## 🔍 Project Overview  
-This project demonstrates a **secure, scalable, and fully automated** DevSecOps pipeline for deploying a three-tier **MERN application** on **AWS EKS**. It integrates **Infrastructure as Code (IaC), CI/CD automation, GitOps, security scanning, and monitoring**, ensuring a production-ready cloud-native deployment.  
+This project demonstrates a **secure, scalable, and fully automated** DevSecOps pipeline for deploying a three-tier **MERN application** on **AWS EKS**. It integrates **Infrastructure as Code (IaC), CI/CD automation, GitOps, security scanning, and monitoring**, ensuring a production-ready cloud-native deployment.🛳️ 
+![](devsecops-in-action.jpg)
 
 ## 🏗️ Key Highlights  
 - **Infrastructure as Code (IaC)** – Automated provisioning of AWS resources using **Terraform**.  
