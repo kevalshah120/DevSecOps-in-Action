@@ -22,3 +22,11 @@ This project is a **blueprint for building secure, automated, and scalable cloud
 
 ## 📖 Read the Full Blog  
 For a detailed walkthrough of this project, check out my blog post: [**Ultimate DevSecOps Project: End-to-End Kubernetes Three-Tier Deployment on AWS EKS with ArgoCD, Prometheus, Grafana, and Jenkins**](https://itspraduman.hashnode.dev/ultimate-devsecops-project-end-to-end-kubernetes-three-tier-deployment-on-aws-eks-with-argocd-prometheus-grafana-and-jenkins)   
+
+## ☕ Support
+
+If you found this project helpful or interesting, consider supporting me by buying a coffee:
+
+<a href="https://www.buymeacoffee.com/praduman" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important; width: 145px !important;">
+</a>
